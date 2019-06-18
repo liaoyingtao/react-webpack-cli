@@ -8,8 +8,10 @@ module.exports = function (api) {
         "useBuiltIns": "usage",
         "corejs": "2"
       }
-    ]
+    ],
+    "@babel/preset-react"
   ];
+  
   const plugins = [
     '@babel/plugin-transform-runtime'
   ];
