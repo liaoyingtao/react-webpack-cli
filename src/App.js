@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 import './style.less';
 
 function App() {
@@ -16,4 +16,4 @@ function App() {
   );
 }
 
-export default hot(module)(App);
+export default hot(App);
