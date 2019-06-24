@@ -5,6 +5,10 @@ const webpack = require('webpack');
 
 module.exports = merge(common, {
   mode: 'development',
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, '../dist')
+  },
   module: {
     rules: [
       {
@@ -18,9 +22,9 @@ module.exports = merge(common, {
       }
     ]
   },
-  devtool: 'eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   devServer: {
-    contentBase: '../dist',
+    contentBase: path.resolve(__dirname, '../dist'),
     open: true,
     hot: true
   },

@@ -14,7 +14,14 @@ module.exports = function (api) {
   
   const plugins = [
     "@babel/plugin-transform-runtime",
-    "react-hot-loader/babel"
+    "react-hot-loader/babel",
+    [
+      "import", {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": "css" // `style: true` 会加载 less 文件
+      }
+    ]
   ];
 
   return {
