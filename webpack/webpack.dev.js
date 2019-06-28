@@ -3,6 +3,10 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
 
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 module.exports = merge(common, {
   mode: 'development',
   output: {
@@ -13,10 +17,11 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(css|less)$/,
-        include: path.resolve(__dirname, '../src'),
+        include: [resolve('src'), resolve('node_modules/antd')],
         use: [
           'style-loader',
           'css-loader',
+          'postcss-loader',
           'less-loader'
         ]
       }
